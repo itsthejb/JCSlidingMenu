@@ -25,6 +25,7 @@
 
 - (NSString *)title { return @"Right"; }
 
+- (NSTextAlignment)alignment { return NSTextAlignmentRight; }
 
 - (void)viewDidLoad
 {

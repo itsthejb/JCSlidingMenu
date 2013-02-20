@@ -81,8 +81,8 @@ const CGFloat centerMenuRevealAmount = 100;
     case UIGestureRecognizerStateEnded:
     case UIGestureRecognizerStateCancelled:
     {
-//      [self setState:[self stateForTransform:self.centerViewController.view.transform]
-//            animated:YES];
+      [self setState:[self stateForTransform:self.centerViewController.view.transform]
+            animated:YES];
     }
 
     default:

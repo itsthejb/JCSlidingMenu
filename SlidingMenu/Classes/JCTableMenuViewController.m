@@ -43,6 +43,8 @@ static NSString *CellIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (NSTextAlignment)alignment { return NSTextAlignmentCenter; }
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -56,6 +58,7 @@ static NSString *CellIdentifier = @"Cell";
 
     // Configure the cell...
   cell.textLabel.text = self.title;
+  cell.textLabel.textAlignment = self.alignment;
     
     return cell;
 }

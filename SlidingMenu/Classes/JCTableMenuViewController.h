@@ -10,4 +10,6 @@
 
 @interface JCTableMenuViewController : UITableViewController
 
+- (NSTextAlignment)alignment;
+
 @end
