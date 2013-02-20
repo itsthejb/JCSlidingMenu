@@ -17,13 +17,15 @@ const CGFloat centerMenuRevealAmount = 100;
 @property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
 @property (nonatomic, assign, readwrite) SlidingMenuViewControllerState state;
 
+@property (nonatomic, assign) CGPoint positionAtStart;
+
 //- (void) handleGesture;
 - (void) handleGesture:(UIGestureRecognizer*)gestureRecognizer;
 
 - (void) setState:(SlidingMenuViewControllerState)newState
          animated:(BOOL)animated;
 
-- (SlidingMenuViewControllerState) stateForTransform:(CGAffineTransform)transform;
+- (SlidingMenuViewControllerState) stateForOffset:(CGFloat) offset;
 - (UIViewController*) viewControllerToTransitionToForTransform:(CGAffineTransform)transform;
 
 @end
@@ -71,6 +73,10 @@ const CGFloat centerMenuRevealAmount = 100;
   UIViewController *otherViewController = [self viewControllerToTransitionToForTransform:transform];
 
   switch (gestureRecognizer.state) {
+    case UIGestureRecognizerStateBegan:
+      self.positionAtStart = CGPointApplyAffineTransform(CGPointZero,
+                                                         self.centerViewController.view.transform);;
+      // fall through
     case UIGestureRecognizerStateChanged:
     {
       self.centerViewController.view.transform = transform;
@@ -81,8 +87,15 @@ const CGFloat centerMenuRevealAmount = 100;
     case UIGestureRecognizerStateEnded:
     case UIGestureRecognizerStateCancelled:
     {
-      [self setState:[self stateForTransform:self.centerViewController.view.transform]
+      CGPoint offset = CGPointApplyAffineTransform(CGPointZero,
+                                                   self.centerViewController.view.transform);
+      NSLog(@"%f %f", self.positionAtStart.x, offset.x);
+
+
+      [self setState:[self stateForOffset:offset.x]
             animated:YES];
+
+      self.positionAtStart = CGPointZero;
     }
 
     default:
@@ -92,16 +105,24 @@ const CGFloat centerMenuRevealAmount = 100;
   [gestureRecognizer setTranslation:CGPointZero inView:self.view];
 }
 
-- (SlidingMenuViewControllerState) stateForTransform:(CGAffineTransform)transform
+- (SlidingMenuViewControllerState) stateForOffset:(CGFloat) offset
 {
-  CGPoint offset = CGPointApplyAffineTransform(CGPointZero, transform);
+  if (offset > slideMinimumOffset) {
+    NSLog(@"flick to left");
+    if (self.state == SlidingMenuViewControllerStateCenter) {
+      return SlidingMenuViewControllerStateLeft;
+    }
+//    return SlidingMenuViewControllerStateLeft;
+  }
+  if (offset < -slideMinimumOffset) {
+    NSLog(@"flight to right");
+    if (self.state == SlidingMenuViewControllerStateCenter) {
+      return SlidingMenuViewControllerStateRight;
+    }
 
-  if (offset.x > slideMinimumOffset) {
-    return SlidingMenuViewControllerStateLeft;
+  //  return SlidingMenuViewControllerStateRight;
   }
-  if (offset.x < -slideMinimumOffset) {
-    return SlidingMenuViewControllerStateRight;
-  }
+  NSLog(@"not enough");
   return SlidingMenuViewControllerStateCenter;
 }
 
