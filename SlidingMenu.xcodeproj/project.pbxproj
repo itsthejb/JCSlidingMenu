@@ -16,6 +16,10 @@
 		49C27F8C16D514C500C755C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C27F8B16D514C500C755C2 /* Default.png */; };
 		49C27F8E16D514C500C755C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C27F8D16D514C500C755C2 /* Default@2x.png */; };
 		49C27F9016D514C500C755C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49C27F8F16D514C500C755C2 /* Default-568h@2x.png */; };
+		49E7C1D416D5173900BD9EF4 /* JCSlidingMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1D316D5173900BD9EF4 /* JCSlidingMenuViewController.m */; };
+		49E7C1D716D5175D00BD9EF4 /* JCTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1D616D5175D00BD9EF4 /* JCTableMenuViewController.m */; };
+		49E7C1DD16D5179900BD9EF4 /* JCLeftTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1DC16D5179900BD9EF4 /* JCLeftTableMenuViewController.m */; };
+		49E7C1E016D517A700BD9EF4 /* JCRightTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1DF16D517A700BD9EF4 /* JCRightTableMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,14 @@
 		49C27F8B16D514C500C755C2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		49C27F8D16D514C500C755C2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		49C27F8F16D514C500C755C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		49E7C1D216D5173900BD9EF4 /* JCSlidingMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCSlidingMenuViewController.h; path = Classes/JCSlidingMenuViewController.h; sourceTree = "<group>"; };
+		49E7C1D316D5173900BD9EF4 /* JCSlidingMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCSlidingMenuViewController.m; path = Classes/JCSlidingMenuViewController.m; sourceTree = "<group>"; };
+		49E7C1D516D5175D00BD9EF4 /* JCTableMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCTableMenuViewController.h; path = Classes/JCTableMenuViewController.h; sourceTree = "<group>"; };
+		49E7C1D616D5175D00BD9EF4 /* JCTableMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCTableMenuViewController.m; path = Classes/JCTableMenuViewController.m; sourceTree = "<group>"; };
+		49E7C1DB16D5179900BD9EF4 /* JCLeftTableMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCLeftTableMenuViewController.h; path = Classes/JCLeftTableMenuViewController.h; sourceTree = "<group>"; };
+		49E7C1DC16D5179900BD9EF4 /* JCLeftTableMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCLeftTableMenuViewController.m; path = Classes/JCLeftTableMenuViewController.m; sourceTree = "<group>"; };
+		49E7C1DE16D517A700BD9EF4 /* JCRightTableMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCRightTableMenuViewController.h; path = Classes/JCRightTableMenuViewController.h; sourceTree = "<group>"; };
+		49E7C1DF16D517A700BD9EF4 /* JCRightTableMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCRightTableMenuViewController.m; path = Classes/JCRightTableMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,9 @@
 				49C27F8816D514C500C755C2 /* JCAppDelegate.h */,
 				49C27F8916D514C500C755C2 /* JCAppDelegate.m */,
 				49C27F8016D514C500C755C2 /* Supporting Files */,
+				49E7C1D216D5173900BD9EF4 /* JCSlidingMenuViewController.h */,
+				49E7C1D316D5173900BD9EF4 /* JCSlidingMenuViewController.m */,
+				49E7C1E116D517AB00BD9EF4 /* Menus */,
 			);
 			path = SlidingMenu;
 			sourceTree = "<group>";
@@ -97,6 +112,19 @@
 				49C27F8F16D514C500C755C2 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49E7C1E116D517AB00BD9EF4 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				49E7C1D516D5175D00BD9EF4 /* JCTableMenuViewController.h */,
+				49E7C1D616D5175D00BD9EF4 /* JCTableMenuViewController.m */,
+				49E7C1DB16D5179900BD9EF4 /* JCLeftTableMenuViewController.h */,
+				49E7C1DC16D5179900BD9EF4 /* JCLeftTableMenuViewController.m */,
+				49E7C1DE16D517A700BD9EF4 /* JCRightTableMenuViewController.h */,
+				49E7C1DF16D517A700BD9EF4 /* JCRightTableMenuViewController.m */,
+			);
+			name = Menus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +195,10 @@
 			files = (
 				49C27F8616D514C500C755C2 /* main.m in Sources */,
 				49C27F8A16D514C500C755C2 /* JCAppDelegate.m in Sources */,
+				49E7C1D416D5173900BD9EF4 /* JCSlidingMenuViewController.m in Sources */,
+				49E7C1D716D5175D00BD9EF4 /* JCTableMenuViewController.m in Sources */,
+				49E7C1DD16D5179900BD9EF4 /* JCLeftTableMenuViewController.m in Sources */,
+				49E7C1E016D517A700BD9EF4 /* JCRightTableMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +313,7 @@
 				49C27F9516D514C500C755C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
