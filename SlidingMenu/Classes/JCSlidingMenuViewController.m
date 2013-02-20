@@ -65,7 +65,9 @@ const CGFloat centerMenuRevealAmount = 100;
 - (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
   CGPoint translation = [gestureRecognizer translationInView:self.view];
-  CGAffineTransform transform = CGAffineTransformMakeTranslation(translation.x, 0);
+
+  CGAffineTransform transform = CGAffineTransformTranslate(self.centerViewController.view.transform, translation.x, 0);
+
   UIViewController *otherViewController = [self viewControllerToTransitionToForTransform:transform];
 
   switch (gestureRecognizer.state) {
@@ -79,13 +81,15 @@ const CGFloat centerMenuRevealAmount = 100;
     case UIGestureRecognizerStateEnded:
     case UIGestureRecognizerStateCancelled:
     {
-      [self setState:[self stateForTransform:self.centerViewController.view.transform]
-            animated:YES];
+//      [self setState:[self stateForTransform:self.centerViewController.view.transform]
+//            animated:YES];
     }
 
     default:
       break;
   }
+
+  [gestureRecognizer setTranslation:CGPointZero inView:self.view];
 }
 
 - (SlidingMenuViewControllerState) stateForTransform:(CGAffineTransform)transform
