@@ -61,20 +61,21 @@ const CGFloat centerMenuRevealAmount = 100;
   self.gestureRecognizer.delegate = self;
   [self.view addGestureRecognizer:self.gestureRecognizer];
 
-  self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-  self.view.layer.shadowOpacity = 0.5;
-  self.view.layer.shadowOffset = CGSizeZero;
-
-  UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.frame];
-  self.view.layer.shadowPath = path.CGPath;
+  // shadow
+  UIView *view = self.centerViewController.view;
+  view.layer.shadowColor = [UIColor blackColor].CGColor;
+  view.layer.masksToBounds = NO;
+  view.layer.cornerRadius = 8;
+  view.layer.shadowOffset = CGSizeZero;
+  view.layer.shadowRadius = 10;
+  view.layer.shadowOpacity = 1;
+  view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
 }
 
 - (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
   CGPoint translation = [gestureRecognizer translationInView:self.view];
-
   CGAffineTransform transform = CGAffineTransformTranslate(self.centerViewController.view.transform, translation.x, 0);
-
   UIViewController <SlidingMenuViewControllerDelegate> *otherViewController = [self viewControllerToTransitionToForTransform:transform];
 
   switch (gestureRecognizer.state) {
