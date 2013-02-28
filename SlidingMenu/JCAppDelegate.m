@@ -26,7 +26,7 @@
 
   JCSlidingMenuViewController *slidingMenu = [[JCSlidingMenuViewController alloc] init];
   slidingMenu.leftViewController = [[JCLeftTableMenuViewController alloc] init];
-  slidingMenu.rightViewController = [[JCRightTableMenuViewController alloc] init];
+  //slidingMenu.rightViewController = [[JCRightTableMenuViewController alloc] init];
 
   UIViewController *placeholder = [[UIViewController alloc] init];
   placeholder.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];

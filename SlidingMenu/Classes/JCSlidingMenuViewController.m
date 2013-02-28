@@ -19,8 +19,8 @@ const CGFloat centerMenuRevealAmount = 100;
 @property (nonatomic, assign) CGPoint positionAtStart;
 @property (nonatomic, assign) BOOL hasSentRevealMessage;
 
-//- (void) handleGesture;
 - (void) handleGesture:(UIGestureRecognizer*)gestureRecognizer;
+- (void) addSideViewController:(UIViewController *)viewController;
 
 - (void) setState:(SlidingMenuViewControllerState)newState
          animated:(BOOL)animated;
@@ -32,25 +32,27 @@ const CGFloat centerMenuRevealAmount = 100;
 
 @implementation JCSlidingMenuViewController
 
+- (void)addSideViewController:(UIViewController *)viewController
+{
+    if (viewController) {
+        [self addChildViewController:viewController];
+        [viewController didMoveToParentViewController:self];
+        viewController.view.frame = self.view.bounds;
+        [self.view addSubview:viewController.view];
+    }
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
 
+  // left and right
+  [self addSideViewController:self.leftViewController];
+  [self addSideViewController:self.rightViewController];
+  
   // centre
   [self addChildViewController:self.centerViewController];
-  [self.centerViewController didMoveToParentViewController:self];
-
-  // left and right
-  [self addChildViewController:self.leftViewController];
-  [self.leftViewController didMoveToParentViewController:self];
-  [self addChildViewController:self.rightViewController];
-  [self.rightViewController didMoveToParentViewController:self];
-
-  self.leftViewController.view.frame = self.view.bounds;
-  self.rightViewController.view.frame = self.view.bounds;
-  [self.view addSubview:self.leftViewController.view];
-  [self.view addSubview:self.rightViewController.view];
-  
+  [self.centerViewController didMoveToParentViewController:self];  
   [self.view addSubview:self.centerViewController.view];
 
   self.gestureRecognizer = [[UIPanGestureRecognizer alloc]
@@ -83,24 +85,25 @@ const CGFloat centerMenuRevealAmount = 100;
       // fall through
     case UIGestureRecognizerStateChanged:
     {
-      if (!self.hasSentRevealMessage) {
-
-        UIViewController <SlidingMenuViewControllerDelegate> *toBeRevealed = self.leftViewController;
-        if (otherViewController == self.leftViewController) {
-          toBeRevealed = self.rightViewController;
-        }
-
-        [toBeRevealed viewControllerWillAppearFromSlidingViewController:self];
-
-        if (self.state != SlidingMenuViewControllerStateCenter) {
-          [otherViewController viewControllerWillHideFromSlidingViewController:self];
-        }
-
-        self.hasSentRevealMessage = YES;
+      UIViewController <SlidingMenuViewControllerDelegate> *toBeRevealed = self.leftViewController;
+      if (otherViewController == self.leftViewController) {
+        toBeRevealed = self.rightViewController;
       }
-
-      self.centerViewController.view.transform = transform;
-      otherViewController.view.transform = transform;
+      
+      if (toBeRevealed) {
+        if (!self.hasSentRevealMessage) {
+          [toBeRevealed viewControllerWillAppearFromSlidingViewController:self];
+          
+          if (self.state != SlidingMenuViewControllerStateCenter) {
+            [otherViewController viewControllerWillHideFromSlidingViewController:self];
+          }
+          
+          self.hasSentRevealMessage = YES;
+        }
+        
+        self.centerViewController.view.transform = transform;
+        otherViewController.view.transform = transform;
+      }
     }
       break;
 
