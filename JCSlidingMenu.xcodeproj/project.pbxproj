@@ -20,17 +20,35 @@
 		49E7C1D716D5175D00BD9EF4 /* JCTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1D616D5175D00BD9EF4 /* JCTableMenuViewController.m */; };
 		49E7C1DD16D5179900BD9EF4 /* JCLeftTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1DC16D5179900BD9EF4 /* JCLeftTableMenuViewController.m */; };
 		49E7C1E016D517A700BD9EF4 /* JCRightTableMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1DF16D517A700BD9EF4 /* JCRightTableMenuViewController.m */; };
+		49E7C1EF16D5384700BD9EF4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E7C1EE16D5384700BD9EF4 /* SenTestingKit.framework */; };
+		49E7C1F016D5384700BD9EF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C27F7916D514C400C755C2 /* UIKit.framework */; };
+		49E7C1F116D5384700BD9EF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C27F7B16D514C400C755C2 /* Foundation.framework */; };
+		49E7C1F716D5384700BD9EF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49E7C1F516D5384700BD9EF4 /* InfoPlist.strings */; };
+		49E7C1FA16D5384700BD9EF4 /* TestBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1F916D5384700BD9EF4 /* TestBundle.m */; };
+		49E7C1FF16D5385100BD9EF4 /* UIVew+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E7C1E616D533CF00BD9EF4 /* UIVew+Testing.m */; };
+		BC030F3E51444EF8A2CC15AE /* libPods-TestBundle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164E5175ECDF48EA9153A9BD /* libPods-TestBundle.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		49E7C20016D538B200BD9EF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49C27F6E16D514C400C755C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49C27F7516D514C400C755C2;
+			remoteInfo = SlidingMenu;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		49C27F7616D514C400C755C2 /* SlidingMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidingMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		164E5175ECDF48EA9153A9BD /* libPods-TestBundle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestBundle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C27F7616D514C400C755C2 /* JCSlidingMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCSlidingMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C27F7916D514C400C755C2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49C27F7B16D514C400C755C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49C27F7D16D514C400C755C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		49C27F8116D514C500C755C2 /* SlidingMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlidingMenu-Info.plist"; sourceTree = "<group>"; };
+		49C27F8116D514C500C755C2 /* JCSlidingMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JCSlidingMenu-Info.plist"; sourceTree = "<group>"; };
 		49C27F8316D514C500C755C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49C27F8516D514C500C755C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49C27F8716D514C500C755C2 /* SlidingMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlidingMenu-Prefix.pch"; sourceTree = "<group>"; };
+		49C27F8716D514C500C755C2 /* JCSlidingMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JCSlidingMenu-Prefix.pch"; sourceTree = "<group>"; };
 		49C27F8816D514C500C755C2 /* JCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JCAppDelegate.h; sourceTree = "<group>"; };
 		49C27F8916D514C500C755C2 /* JCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCAppDelegate.m; sourceTree = "<group>"; };
 		49C27F8B16D514C500C755C2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -44,6 +62,17 @@
 		49E7C1DC16D5179900BD9EF4 /* JCLeftTableMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCLeftTableMenuViewController.m; path = Classes/JCLeftTableMenuViewController.m; sourceTree = "<group>"; };
 		49E7C1DE16D517A700BD9EF4 /* JCRightTableMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JCRightTableMenuViewController.h; path = Classes/JCRightTableMenuViewController.h; sourceTree = "<group>"; };
 		49E7C1DF16D517A700BD9EF4 /* JCRightTableMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JCRightTableMenuViewController.m; path = Classes/JCRightTableMenuViewController.m; sourceTree = "<group>"; };
+		49E7C1E516D533CF00BD9EF4 /* UIVew+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIVew+Testing.h"; path = "../SlidingMenu/Classes/UIVew+Testing.h"; sourceTree = "<group>"; };
+		49E7C1E616D533CF00BD9EF4 /* UIVew+Testing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIVew+Testing.m"; path = "../SlidingMenu/Classes/UIVew+Testing.m"; sourceTree = "<group>"; };
+		49E7C1ED16D5384700BD9EF4 /* TestBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBundle.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E7C1EE16D5384700BD9EF4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		49E7C1F416D5384700BD9EF4 /* TestBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestBundle-Info.plist"; sourceTree = "<group>"; };
+		49E7C1F616D5384700BD9EF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49E7C1F816D5384700BD9EF4 /* TestBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBundle.h; sourceTree = "<group>"; };
+		49E7C1F916D5384700BD9EF4 /* TestBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBundle.m; sourceTree = "<group>"; };
+		49E7C1FB16D5384700BD9EF4 /* TestBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestBundle-Prefix.pch"; sourceTree = "<group>"; };
+		49E7C20216D53BF700BD9EF4 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		E4EC47C61B4242EBBF6DB977 /* Pods-TestBundle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBundle.xcconfig"; path = "Pods/Pods-TestBundle.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +86,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49E7C1E916D5384700BD9EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E7C1EF16D5384700BD9EF4 /* SenTestingKit.framework in Frameworks */,
+				49E7C1F016D5384700BD9EF4 /* UIKit.framework in Frameworks */,
+				49E7C1F116D5384700BD9EF4 /* Foundation.framework in Frameworks */,
+				BC030F3E51444EF8A2CC15AE /* libPods-TestBundle.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,15 +104,19 @@
 			isa = PBXGroup;
 			children = (
 				49C27F7F16D514C500C755C2 /* SlidingMenu */,
+				49E7C1F216D5384700BD9EF4 /* TestBundle */,
 				49C27F7816D514C400C755C2 /* Frameworks */,
 				49C27F7716D514C400C755C2 /* Products */,
+				49E7C20216D53BF700BD9EF4 /* Podfile */,
+				E4EC47C61B4242EBBF6DB977 /* Pods-TestBundle.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		49C27F7716D514C400C755C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49C27F7616D514C400C755C2 /* SlidingMenu.app */,
+				49C27F7616D514C400C755C2 /* JCSlidingMenu.app */,
+				49E7C1ED16D5384700BD9EF4 /* TestBundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +127,8 @@
 				49C27F7916D514C400C755C2 /* UIKit.framework */,
 				49C27F7B16D514C400C755C2 /* Foundation.framework */,
 				49C27F7D16D514C400C755C2 /* CoreGraphics.framework */,
+				49E7C1EE16D5384700BD9EF4 /* SenTestingKit.framework */,
+				164E5175ECDF48EA9153A9BD /* libPods-TestBundle.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,10 +149,10 @@
 		49C27F8016D514C500C755C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49C27F8116D514C500C755C2 /* SlidingMenu-Info.plist */,
+				49C27F8116D514C500C755C2 /* JCSlidingMenu-Info.plist */,
 				49C27F8216D514C500C755C2 /* InfoPlist.strings */,
 				49C27F8516D514C500C755C2 /* main.m */,
-				49C27F8716D514C500C755C2 /* SlidingMenu-Prefix.pch */,
+				49C27F8716D514C500C755C2 /* JCSlidingMenu-Prefix.pch */,
 				49C27F8B16D514C500C755C2 /* Default.png */,
 				49C27F8D16D514C500C755C2 /* Default@2x.png */,
 				49C27F8F16D514C500C755C2 /* Default-568h@2x.png */,
@@ -127,12 +173,34 @@
 			name = Menus;
 			sourceTree = "<group>";
 		};
+		49E7C1F216D5384700BD9EF4 /* TestBundle */ = {
+			isa = PBXGroup;
+			children = (
+				49E7C1E516D533CF00BD9EF4 /* UIVew+Testing.h */,
+				49E7C1E616D533CF00BD9EF4 /* UIVew+Testing.m */,
+				49E7C1F816D5384700BD9EF4 /* TestBundle.h */,
+				49E7C1F916D5384700BD9EF4 /* TestBundle.m */,
+				49E7C1F316D5384700BD9EF4 /* Supporting Files */,
+			);
+			path = TestBundle;
+			sourceTree = "<group>";
+		};
+		49E7C1F316D5384700BD9EF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49E7C1F416D5384700BD9EF4 /* TestBundle-Info.plist */,
+				49E7C1F516D5384700BD9EF4 /* InfoPlist.strings */,
+				49E7C1FB16D5384700BD9EF4 /* TestBundle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49C27F7516D514C400C755C2 /* SlidingMenu */ = {
+		49C27F7516D514C400C755C2 /* JCSlidingMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49C27F9316D514C500C755C2 /* Build configuration list for PBXNativeTarget "SlidingMenu" */;
+			buildConfigurationList = 49C27F9316D514C500C755C2 /* Build configuration list for PBXNativeTarget "JCSlidingMenu" */;
 			buildPhases = (
 				49C27F7216D514C400C755C2 /* Sources */,
 				49C27F7316D514C400C755C2 /* Frameworks */,
@@ -142,10 +210,30 @@
 			);
 			dependencies = (
 			);
-			name = SlidingMenu;
+			name = JCSlidingMenu;
 			productName = SlidingMenu;
-			productReference = 49C27F7616D514C400C755C2 /* SlidingMenu.app */;
+			productReference = 49C27F7616D514C400C755C2 /* JCSlidingMenu.app */;
 			productType = "com.apple.product-type.application";
+		};
+		49E7C1EC16D5384700BD9EF4 /* TestBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49E7C1FC16D5384700BD9EF4 /* Build configuration list for PBXNativeTarget "TestBundle" */;
+			buildPhases = (
+				49E7C1E816D5384700BD9EF4 /* Sources */,
+				49E7C1E916D5384700BD9EF4 /* Frameworks */,
+				49E7C1EA16D5384700BD9EF4 /* Resources */,
+				49E7C1EB16D5384700BD9EF4 /* ShellScript */,
+				07ACD87A80334D7BA90F910B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49E7C20116D538B200BD9EF4 /* PBXTargetDependency */,
+			);
+			name = TestBundle;
+			productName = TestBundle;
+			productReference = 49E7C1ED16D5384700BD9EF4 /* TestBundle.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -157,7 +245,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = jc;
 			};
-			buildConfigurationList = 49C27F7116D514C400C755C2 /* Build configuration list for PBXProject "SlidingMenu" */;
+			buildConfigurationList = 49C27F7116D514C400C755C2 /* Build configuration list for PBXProject "JCSlidingMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -169,7 +257,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49C27F7516D514C400C755C2 /* SlidingMenu */,
+				49C27F7516D514C400C755C2 /* JCSlidingMenu */,
+				49E7C1EC16D5384700BD9EF4 /* TestBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -186,7 +275,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49E7C1EA16D5384700BD9EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E7C1F716D5384700BD9EF4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07ACD87A80334D7BA90F910B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TestBundle-resources.sh\"\n";
+		};
+		49E7C1EB16D5384700BD9EF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49C27F7216D514C400C755C2 /* Sources */ = {
@@ -202,13 +329,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49E7C1E816D5384700BD9EF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E7C1FA16D5384700BD9EF4 /* TestBundle.m in Sources */,
+				49E7C1FF16D5385100BD9EF4 /* UIVew+Testing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49E7C20116D538B200BD9EF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49C27F7516D514C400C755C2 /* JCSlidingMenu */;
+			targetProxy = 49E7C20016D538B200BD9EF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		49C27F8216D514C500C755C2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				49C27F8316D514C500C755C2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49E7C1F516D5384700BD9EF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49E7C1F616D5384700BD9EF4 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -276,9 +428,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SlidingMenu/SlidingMenu-Prefix.pch";
-				INFOPLIST_FILE = "SlidingMenu/SlidingMenu-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SlidingMenu/JCSlidingMenu-Prefix.pch";
+				INFOPLIST_FILE = "SlidingMenu/JCSlidingMenu-Info.plist";
+				PRODUCT_NAME = JCSlidingMenu;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -287,17 +439,53 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SlidingMenu/SlidingMenu-Prefix.pch";
-				INFOPLIST_FILE = "SlidingMenu/SlidingMenu-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SlidingMenu/JCSlidingMenu-Prefix.pch";
+				INFOPLIST_FILE = "SlidingMenu/JCSlidingMenu-Info.plist";
+				PRODUCT_NAME = JCSlidingMenu;
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		49E7C1FD16D5384700BD9EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EC47C61B4242EBBF6DB977 /* Pods-TestBundle.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/$(PROJECT_NAME).app/$(PROJECT_NAME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestBundle/TestBundle-Prefix.pch";
+				INFOPLIST_FILE = "TestBundle/TestBundle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		49E7C1FE16D5384700BD9EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EC47C61B4242EBBF6DB977 /* Pods-TestBundle.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/$(PROJECT_NAME).app/$(PROJECT_NAME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestBundle/TestBundle-Prefix.pch";
+				INFOPLIST_FILE = "TestBundle/TestBundle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49C27F7116D514C400C755C2 /* Build configuration list for PBXProject "SlidingMenu" */ = {
+		49C27F7116D514C400C755C2 /* Build configuration list for PBXProject "JCSlidingMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C27F9116D514C500C755C2 /* Debug */,
@@ -306,11 +494,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49C27F9316D514C500C755C2 /* Build configuration list for PBXNativeTarget "SlidingMenu" */ = {
+		49C27F9316D514C500C755C2 /* Build configuration list for PBXNativeTarget "JCSlidingMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C27F9416D514C500C755C2 /* Debug */,
 				49C27F9516D514C500C755C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49E7C1FC16D5384700BD9EF4 /* Build configuration list for PBXNativeTarget "TestBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49E7C1FD16D5384700BD9EF4 /* Debug */,
+				49E7C1FE16D5384700BD9EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

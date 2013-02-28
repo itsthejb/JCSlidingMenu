@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SlidingMenuViewControllerDelegate;
+
 typedef enum _slidingViewControllerState {
   SlidingMenuViewControllerStateCenter = 0,
   SlidingMenuViewControllerStateLeft,
@@ -17,10 +19,20 @@ typedef enum _slidingViewControllerState {
 
 @interface JCSlidingMenuViewController : UIViewController
 
-@property (nonatomic, strong) UIViewController *leftViewController;
+@property (nonatomic, strong) UIViewController <SlidingMenuViewControllerDelegate> *leftViewController;
 @property (nonatomic, strong) UIViewController *centerViewController;
-@property (nonatomic, strong) UIViewController *rightViewController;
+@property (nonatomic, strong) UIViewController <SlidingMenuViewControllerDelegate> *rightViewController;
 
 @property (nonatomic, assign, readonly) SlidingMenuViewControllerState state;
+
+@end
+
+@protocol SlidingMenuViewControllerDelegate <NSObject>
+
+- (void) viewControllerWillAppearFromSlidingViewController:(JCSlidingMenuViewController*)vc;
+- (void) viewControllerWillHideFromSlidingViewController:(JCSlidingMenuViewController*)vc;
+
+- (void) viewControllerDidAppearFromSlidingViewController:(JCSlidingMenuViewController*)vc;
+- (void) viewControllerDidHideFromSlidingViewController:(JCSlidingMenuViewController*)vc;
 
 @end

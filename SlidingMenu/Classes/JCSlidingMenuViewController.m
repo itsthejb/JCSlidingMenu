@@ -16,8 +16,8 @@ const CGFloat centerMenuRevealAmount = 100;
 @interface JCSlidingMenuViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
 @property (nonatomic, assign, readwrite) SlidingMenuViewControllerState state;
-
 @property (nonatomic, assign) CGPoint positionAtStart;
+@property (nonatomic, assign) BOOL hasSentRevealMessage;
 
 //- (void) handleGesture;
 - (void) handleGesture:(UIGestureRecognizer*)gestureRecognizer;
@@ -26,7 +26,7 @@ const CGFloat centerMenuRevealAmount = 100;
          animated:(BOOL)animated;
 
 - (SlidingMenuViewControllerState) stateForOffset:(CGFloat) offset;
-- (UIViewController*) viewControllerToTransitionToForTransform:(CGAffineTransform)transform;
+- (UIViewController <SlidingMenuViewControllerDelegate>*) viewControllerToTransitionToForTransform:(CGAffineTransform)transform;
 
 @end
 
@@ -46,8 +46,11 @@ const CGFloat centerMenuRevealAmount = 100;
   [self addChildViewController:self.rightViewController];
   [self.rightViewController didMoveToParentViewController:self];
 
+  self.leftViewController.view.frame = self.view.bounds;
+  self.rightViewController.view.frame = self.view.bounds;
   [self.view addSubview:self.leftViewController.view];
   [self.view addSubview:self.rightViewController.view];
+  
   [self.view addSubview:self.centerViewController.view];
 
   self.gestureRecognizer = [[UIPanGestureRecognizer alloc]
@@ -70,15 +73,32 @@ const CGFloat centerMenuRevealAmount = 100;
 
   CGAffineTransform transform = CGAffineTransformTranslate(self.centerViewController.view.transform, translation.x, 0);
 
-  UIViewController *otherViewController = [self viewControllerToTransitionToForTransform:transform];
+  UIViewController <SlidingMenuViewControllerDelegate> *otherViewController = [self viewControllerToTransitionToForTransform:transform];
 
   switch (gestureRecognizer.state) {
     case UIGestureRecognizerStateBegan:
       self.positionAtStart = CGPointApplyAffineTransform(CGPointZero,
-                                                         self.centerViewController.view.transform);;
+                                                         self.centerViewController.view.transform);
+      self.hasSentRevealMessage = NO;
       // fall through
     case UIGestureRecognizerStateChanged:
     {
+      if (!self.hasSentRevealMessage) {
+
+        UIViewController <SlidingMenuViewControllerDelegate> *toBeRevealed = self.leftViewController;
+        if (otherViewController == self.leftViewController) {
+          toBeRevealed = self.rightViewController;
+        }
+
+        [toBeRevealed viewControllerWillAppearFromSlidingViewController:self];
+
+        if (self.state != SlidingMenuViewControllerStateCenter) {
+          [otherViewController viewControllerWillHideFromSlidingViewController:self];
+        }
+
+        self.hasSentRevealMessage = YES;
+      }
+
       self.centerViewController.view.transform = transform;
       otherViewController.view.transform = transform;
     }
@@ -89,8 +109,6 @@ const CGFloat centerMenuRevealAmount = 100;
     {
       CGPoint offset = CGPointApplyAffineTransform(CGPointZero,
                                                    self.centerViewController.view.transform);
-      NSLog(@"%f %f", self.positionAtStart.x, offset.x);
-
 
       [self setState:[self stateForOffset:offset.x]
             animated:YES];
@@ -108,27 +126,19 @@ const CGFloat centerMenuRevealAmount = 100;
 - (SlidingMenuViewControllerState) stateForOffset:(CGFloat) offset
 {
   if (offset > slideMinimumOffset) {
-    NSLog(@"flick to left");
     if (self.state == SlidingMenuViewControllerStateCenter) {
       return SlidingMenuViewControllerStateLeft;
     }
-//    return SlidingMenuViewControllerStateLeft;
   }
   if (offset < -slideMinimumOffset) {
-    NSLog(@"flight to right");
     if (self.state == SlidingMenuViewControllerStateCenter) {
       return SlidingMenuViewControllerStateRight;
     }
-
-  //  return SlidingMenuViewControllerStateRight;
   }
-  NSLog(@"not enough");
   return SlidingMenuViewControllerStateCenter;
 }
 
-
-
-- (UIViewController*) viewControllerToTransitionToForTransform:(CGAffineTransform)transform
+- (UIViewController <SlidingMenuViewControllerDelegate>*) viewControllerToTransitionToForTransform:(CGAffineTransform)transform
 {
   CGPoint offset = CGPointApplyAffineTransform(CGPointZero, transform);
 
@@ -146,6 +156,32 @@ const CGFloat centerMenuRevealAmount = 100;
 - (void) setState:(SlidingMenuViewControllerState)newState
          animated:(BOOL)animated
 {
+  __block UIViewController <SlidingMenuViewControllerDelegate> *toBeRevealed = nil;
+  __block UIViewController <SlidingMenuViewControllerDelegate> *toBeHidden = nil;
+
+  switch (newState) {
+    case SlidingMenuViewControllerStateCenter:
+    {
+      toBeHidden = (
+                    self.state == SlidingMenuViewControllerStateLeft ?
+                    self.leftViewController :
+                    self.rightViewController
+                    );
+    }
+      break;
+
+    case SlidingMenuViewControllerStateLeft:
+      toBeRevealed = self.leftViewController;
+      break;
+
+    case SlidingMenuViewControllerStateRight:
+      toBeRevealed = self.rightViewController;
+      break;
+
+    default:
+      break;
+  }
+
   _state = newState;
 
   NSArray *blocksForState = \
@@ -174,8 +210,19 @@ const CGFloat centerMenuRevealAmount = 100;
 
   dispatch_block_t block = blocksForState[self.state];
 
-  [UIView animateWithDuration:animated ? 0.4 : 0.0
-                   animations:block];
+  [UIView animateWithDuration:animated ? 0.2 : 0.0
+                        delay:0
+                      options:UIViewAnimationOptionCurveEaseOut
+                   animations:
+   ^{
+     self.gestureRecognizer.enabled = NO;
+     block();
+   } completion:^(BOOL finished) {
+     self.gestureRecognizer.enabled = YES;
+
+     [toBeRevealed viewControllerDidAppearFromSlidingViewController:self];
+     [toBeHidden viewControllerDidHideFromSlidingViewController:self];
+   }];
 }
 
 @end

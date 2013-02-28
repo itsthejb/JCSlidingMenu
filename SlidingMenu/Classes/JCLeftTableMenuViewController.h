@@ -10,4 +10,7 @@
 
 @interface JCLeftTableMenuViewController : JCTableMenuViewController
 
+@property (strong) id property;
+
+
 @end

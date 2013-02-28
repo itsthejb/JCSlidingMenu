@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JCSlidingMenuViewController.h"
 
-@interface JCTableMenuViewController : UITableViewController
+@interface JCTableMenuViewController : UITableViewController <SlidingMenuViewControllerDelegate>
 
 - (NSTextAlignment)alignment;
 
